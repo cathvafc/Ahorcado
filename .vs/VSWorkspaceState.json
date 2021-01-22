@@ -3,8 +3,8 @@
     "",
     "\\Ahorcado",
     "\\Ahorcado\\Ahorcado",
-    "\\Ahorcado\\Ahorcado\\Forms",
-    "\\Ahorcado\\Ahorcado\\obj"
+    "\\Ahorcado\\Ahorcado\\DTO",
+    "\\Ahorcado\\Ahorcado\\Forms"
   ],
   "SelectedNode": "\\Ahorcado\\Ahorcado\\Forms\\Form1.Designer.cs",
   "PreviewInSolutionExplorer": false

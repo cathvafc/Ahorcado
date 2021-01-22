@@ -51,26 +51,33 @@ namespace Ahorcado
 
         }
 
+
         public void AñadirLetra(char letra)
         {
-            //Comprobamos si la letra está en el palabraAEncontrar TODO
 
+            int intentos=5;
 
+            if (palabraAEncontrar.Contains(letra))
+            {
+                for (int i = 0; i < palabraAEncontrar.Length; i++)
+                {
+                    if (palabraAEncontrar[i].Equals(letra))
+                    {
+                        hiddenWord[i] = letra;
+                    }
+                }
+            }
+            else
+            {
+                intentos--;
 
-            //Si está en el array, añadimos la letra en las posiciones pertinentes y modificamos el textbox.text TODO
-
-
-            // Si no está en el array TODO
-                //Restamos un intento
-                //Modificamos imagen
-                //Comprobamos que intentos > 0
-                    //Si intentos = 0, acabamos el programa
-                    // Añadimos imagen de destrucción y muerte
+                if (intentos == 0)
+                {
+                    //Finalizar Programa
+                }
+            }
         }
 
-        /// <summary>
-        /// Método para usar una pista
-        /// </summary>
         public void UsarPista()
         {
             //Añadimos letra random al hiddenArray 
