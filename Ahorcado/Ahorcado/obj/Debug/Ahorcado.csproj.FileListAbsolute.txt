@@ -1,0 +1,10 @@
+C:\Users\jpola\source\repos\cathvafc\Ahorcado\Ahorcado\Ahorcado\bin\Debug\Ahorcado.exe.config
+C:\Users\jpola\source\repos\cathvafc\Ahorcado\Ahorcado\Ahorcado\bin\Debug\Ahorcado.exe
+C:\Users\jpola\source\repos\cathvafc\Ahorcado\Ahorcado\Ahorcado\bin\Debug\Ahorcado.pdb
+C:\Users\jpola\source\repos\cathvafc\Ahorcado\Ahorcado\Ahorcado\obj\Debug\Ahorcado.csprojAssemblyReference.cache
+C:\Users\jpola\source\repos\cathvafc\Ahorcado\Ahorcado\Ahorcado\obj\Debug\Ahorcado.Form1.resources
+C:\Users\jpola\source\repos\cathvafc\Ahorcado\Ahorcado\Ahorcado\obj\Debug\Ahorcado.Properties.Resources.resources
+C:\Users\jpola\source\repos\cathvafc\Ahorcado\Ahorcado\Ahorcado\obj\Debug\Ahorcado.csproj.GenerateResource.cache
+C:\Users\jpola\source\repos\cathvafc\Ahorcado\Ahorcado\Ahorcado\obj\Debug\Ahorcado.csproj.CoreCompileInputs.cache
+C:\Users\jpola\source\repos\cathvafc\Ahorcado\Ahorcado\Ahorcado\obj\Debug\Ahorcado.exe
+C:\Users\jpola\source\repos\cathvafc\Ahorcado\Ahorcado\Ahorcado\obj\Debug\Ahorcado.pdb

@@ -51,6 +51,7 @@ namespace Ahorcado
 
         }
 
+
         public void AñadirLetra(char letra)
         {
 
