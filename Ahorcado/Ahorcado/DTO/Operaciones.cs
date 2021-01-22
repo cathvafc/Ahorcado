@@ -44,6 +44,7 @@ namespace Ahorcado
 
         }
 
+
         public void AñadirLetra(char letra)
         {
             //Comprobamos si la letra está en el hiddenArray TODO
