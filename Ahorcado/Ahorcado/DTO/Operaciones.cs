@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Ahorcado
 {
-
    
     class Operaciones
     {
