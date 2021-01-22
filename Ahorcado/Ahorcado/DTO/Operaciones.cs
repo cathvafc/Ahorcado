@@ -128,7 +128,22 @@ namespace Ahorcado
         /// </summary>
         private void AñadirLetraRandomHiddenArray()
         {
-            //TODO
+            int max = 0;
+            int min = 0;
+            int posicionRandom = 0;
+
+            //Primero generaremos un número random entre la length de la palabra a encontrar
+            Random random = new Random();
+            max = palabraAEncontrar.Length - 1;
+
+            posicionRandom = random.Next(min, max);
+
+            //Si la letra no está en la hiddenword, la añadimos.
+            if(hiddenWord[posicionRandom] == '_')
+            {
+                AñadirLetra(Convert.ToChar(palabraAEncontrar.Substring(posicionRandom)));               
+            }
+
         }
 
         /// <summary>
