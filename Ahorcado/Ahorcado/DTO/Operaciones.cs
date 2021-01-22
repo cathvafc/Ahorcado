@@ -17,13 +17,17 @@ namespace Ahorcado
 
         string palabraAEncontrar;
         char[] hiddenWord;
+        int intentosRestantes;
+        int pistasRestantes;
 
         /// <summary>
         /// Constructor
         /// </summary>
         public Operaciones()
         {
-
+            //5 intentos fallidos para adivinar la palabra
+            intentosRestantes = 5;
+            palabraAEncontrar = "";
         }
 
         /// <summary>
@@ -35,12 +39,15 @@ namespace Ahorcado
             palabraAEncontrar = EscogerPalabra();
             hiddenWord = new char[palabraAEncontrar.Length];
             RemplazarPorBarrasBajas(ref hiddenWord);
+
             //Ponemos imagen vacia TODO
 
-            //Reiniciamos contadores de intentos TODO
 
-            //Reiniciamos contador de pistas TODO
+            //Reiniciamos contadores de intentos
+            intentosRestantes = 5;
 
+            //Reiniciamos contador de pistas 
+            pistasRestantes = 5;
 
         }
 
@@ -71,25 +78,30 @@ namespace Ahorcado
             }
         }
 
-
-      
-
         public void UsarPista()
         {
-            //Añadimos letra random al hiddenArray TODO
+            //Añadimos letra random al hiddenArray 
+            AñadirLetraRandomHiddenArray();
+            //restamos 1 al contador de pistas
+            pistasRestantes--;
 
-            //restamos 1 al contador de pistas TODO
+        }
+
+        /// <summary>
+        /// Método que devuelve la palabra totalmente descubierta con espacios intercalados 
+        /// </summary>
+        /// <returns></returns>
+        public string Resolver()
+        {          
+            //Añadimos espacios intercalados a la palabra
+            IntercalarEspacios(ref palabraAEncontrar);
+
+            //Devolvemos la palabra descubierta con los espacios intercalados para actualizar el textbox.text.
+            return palabraAEncontrar;
 
         }
 
-        public void Resolver()
-        {
-            //Mostramos la palabra a resolver en el textbox.text TODO
 
-
-            //Mantenemos la imagen  TODO
-
-        }
 
         /// <summary>
         /// Método que escoge una palabra rándom para ser descubierta 
@@ -118,7 +130,45 @@ namespace Ahorcado
             }
         }
 
+        /// <summary>
+        /// Método para añadir una letra random en la hiddenword de la palabra a encontrar 
+        /// </summary>
+        private void AñadirLetraRandomHiddenArray()
+        {
+            int max = 0;
+            int min = 0;
+            int posicionRandom = 0;
 
+            //Primero generaremos un número random entre la length de la palabra a encontrar
+            Random random = new Random();
+            max = palabraAEncontrar.Length - 1;
+
+            posicionRandom = random.Next(min, max);
+
+            //Si la letra no está en la hiddenword, la añadimos.
+            if(hiddenWord[posicionRandom] == '_')
+            {
+                AñadirLetra(Convert.ToChar(palabraAEncontrar.Substring(posicionRandom)));               
+            }
+
+        }
+
+        /// <summary>
+        /// Método que añade espacios entre las letras
+        /// </summary>
+        /// <param name="palabra"></param>
+        private void IntercalarEspacios(ref string palabra)
+        {
+
+            int palabraLength = palabra.Length*2;
+
+            for(int i = 1; i < palabraLength; i++)
+            {                
+                palabra = palabra.Insert(i," ");
+                i++;
+
+            }
+        }
 
     }
 
