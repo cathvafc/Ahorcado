@@ -53,17 +53,22 @@ namespace Ahorcado
 
         public void AñadirLetra(char letra)
         {
-            //Comprobamos si la letra está en el hiddenArray TODO
 
-            //Si está en el array, añadimos la letra en las posiciones pertinentes y modificamos el textbox.text TODO
+                int j = 0;
+
+                bool seguirjugando = false;
+                if (intentosRestantes >= 0)
+                {
+                seguirjugando = false;
+                }
+            else { 
+                for (int i = 0; seguirjugando = true; i++)
+                {
+                     = hiddenWord[];
 
 
-            // Si no está en el array TODO
-                //Restamos un intento
-                //Modificamos imagen
-                //Comprobamos que intentos > 0
-                    //Si intentos = 0, acabamos el programa
-                    // Añadimos imagen de destrucción y muerte
+                }
+            }
         }
 
         public void UsarPista()
@@ -109,8 +114,6 @@ namespace Ahorcado
                 hiddenWord[i] = '_';
             }
         }
-
-
 
     }
 
