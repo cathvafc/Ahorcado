@@ -57,7 +57,7 @@ namespace Ahorcado
 
                 int j = 0;
 
-                bool seguirjugando = false;
+                bool seguirjugando = true;
 
                 if (intentosRestantes >= 0)
                 {
