@@ -23,9 +23,19 @@ namespace Ahorcado
         {
             Button button = (Button)sender;
             char letra = Convert.ToChar(button.Text);
-           // Console.WriteLine(letra);
+            // Console.WriteLine(letra);
+            Operaciones op = new Operaciones();
+            op.AñadirLetra(letra);
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
 
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

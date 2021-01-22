@@ -58,17 +58,20 @@ namespace Ahorcado
                 int j = 0;
 
                 bool seguirjugando = false;
+
                 if (intentosRestantes >= 0)
                 {
                 seguirjugando = false;
                 }
-            else { 
+                else { 
                 for (int i = 0; seguirjugando = true; i++)
                 {
-                     = hiddenWord[];
 
+                    letra = hiddenWord[i];
+                    Console.WriteLine(letra);
 
                 }
+
             }
         }
 
