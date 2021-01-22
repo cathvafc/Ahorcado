@@ -15,18 +15,8 @@ namespace Ahorcado
                               ,"Espiral","Ardilla","Descalzo","Plural","Mudo","Congelar","Ansiedad","Avisos","Puente","Estado","Lianas","Empalmar","Piedra","Alta","Alumnos","Cabeza","Pato","Multiplicar","Cuerpo","Castor","Estudiar","Fragancia","Auxilio","Graduar","Finlandia","Sorteo","Meteorito","",
                               "Prisma","Cebolla","Sopa","Sendero","Alquilar","Ansiedad","Hablar","Minar","Hilos","Brea","Perejil","Nueve","Prender"};
 
-        /// <summary>
-        /// Método que escoge una palabra rándom para ser descubierta 
-        /// </summary>
-        /// <returns></returns>
-        public string EscogerPalabra() 
-        {
-            Random random = new Random();
-
-            int t = palabras.Length;
-            string n = palabras[random.Next(t)];
-            return n;
-        }
+        string palabraAEncontrar;
+        char[] hiddenWord;
 
         /// <summary>
         /// Constructor
@@ -36,11 +26,15 @@ namespace Ahorcado
 
         }
 
-
+        /// <summary>
+        /// Método que reinicia la partida y inicializa todo los atributos a su estado inicial.
+        /// </summary>
         public void Reiniciar()
         {
-            //Escoger una nueva palabra del array TODO
-
+            //Escoger una nueva palabra del array
+            palabraAEncontrar = EscogerPalabra();
+            hiddenWord = new char[palabraAEncontrar.Length];
+            RemplazarPorBarrasBajas(ref hiddenWord);
             //Ponemos imagen vacia TODO
 
             //Reiniciamos contadores de intentos TODO
@@ -82,7 +76,32 @@ namespace Ahorcado
 
         }
 
+        /// <summary>
+        /// Método que escoge una palabra rándom para ser descubierta 
+        /// </summary>
+        /// <returns></returns>
+        private string EscogerPalabra()
+        {
+            Random random = new Random();
 
+            int t = palabras.Length;
+            string n = palabras[random.Next(t)];
+            return n;
+        }
+
+        /// <summary>
+        /// Método que cambia los caracteres de un array de char por _
+        /// </summary>
+        /// <param name="hiddenWord"></param>
+        private void RemplazarPorBarrasBajas(ref char[] hiddenWord)
+        {
+            //Remplazamos los caractéres por _
+
+            for (int i = 0; i < hiddenWord.Length; i++)
+            {
+                hiddenWord[i] = '_';
+            }
+        }
 
 
 
