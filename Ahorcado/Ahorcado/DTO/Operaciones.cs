@@ -75,22 +75,33 @@ namespace Ahorcado
             }
         }
 
+        /// <summary>
+        /// Método para usar una pista
+        /// </summary>
         public void UsarPista()
         {
-            //Añadimos letra random al hiddenArray TODO
+            //Añadimos letra random al hiddenArray 
+            AñadirLetraRandomHiddenArray();
+            //restamos 1 al contador de pistas
+            pistasRestantes--;
 
-            //restamos 1 al contador de pistas TODO
+        }
+
+        /// <summary>
+        /// Método que devuelve la palabra totalmente descubierta con espacios intercalados 
+        /// </summary>
+        /// <returns></returns>
+        public string Resolver()
+        {          
+            //Añadimos espacios intercalados a la palabra
+            IntercalarEspacios(ref palabraAEncontrar);
+
+            //Devolvemos la palabra descubierta con los espacios intercalados para actualizar el textbox.text.
+            return palabraAEncontrar;
 
         }
 
-        public void Resolver()
-        {
-            //Mostramos la palabra a resolver en el textbox.text TODO
 
-
-            //Mantenemos la imagen  TODO
-
-        }
 
         /// <summary>
         /// Método que escoge una palabra rándom para ser descubierta 
@@ -119,6 +130,23 @@ namespace Ahorcado
             }
         }
 
+
+        /// <summary>
+        /// Método para añadir una letra random en la hiddenword de la palabra a encontrar 
+        /// </summary>
+        private void AñadirLetraRandomHiddenArray()
+        {
+            //TODO
+        }
+
+        /// <summary>
+        /// Método que añade espacios entre las letras
+        /// </summary>
+        /// <param name="palabra"></param>
+        private void IntercalarEspacios(ref string palabra)
+        {
+            //TODO
+ 
     }
 
 }
