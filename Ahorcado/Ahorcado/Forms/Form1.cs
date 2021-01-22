@@ -12,9 +12,11 @@ namespace Ahorcado
 {
     public partial class Form1 : Form
     {
+        Operaciones ejemplo1;
         public Form1()
         {
             InitializeComponent();
+            ejemplo1 = new Operaciones();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,6 +38,7 @@ namespace Ahorcado
         private void button4_Click(object sender, EventArgs e)
         {
             //A
+            ejemplo1.AñadirLetra('A');
         }
 
         private void button31_Click(object sender, EventArgs e)
