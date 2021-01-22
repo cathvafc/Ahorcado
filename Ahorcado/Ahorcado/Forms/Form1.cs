@@ -17,6 +17,8 @@ namespace Ahorcado
         {
             InitializeComponent();
             ejemplo1 = new Operaciones();
+            ejemplo1.Reiniciar();
+            ejemplo1.Resolver();
         }
 
     }
