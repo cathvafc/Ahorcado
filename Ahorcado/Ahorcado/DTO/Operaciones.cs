@@ -15,10 +15,12 @@ namespace Ahorcado
                               ,"Espiral","Ardilla","Descalzo","Plural","Mudo","Congelar","Ansiedad","Avisos","Puente","Estado","Lianas","Empalmar","Piedra","Alta","Alumnos","Cabeza","Pato","Multiplicar","Cuerpo","Castor","Estudiar","Fragancia","Auxilio","Graduar","Finlandia","Sorteo","Meteorito","",
                               "Prisma","Cebolla","Sopa","Sendero","Alquilar","Ansiedad","Hablar","Minar","Hilos","Brea","Perejil","Nueve","Prender"};
 
-        string palabraAEncontrar;
-        char[] hiddenWord;
-        int intentosRestantes;
-        int pistasRestantes;
+        private string palabraAEncontrar;
+        private char[] hiddenWord;
+        private int intentosRestantes;
+        private int pistasRestantes;
+        private bool seguirJugando;
+        private bool quedanPistas;
 
         /// <summary>
         /// Constructor
@@ -26,10 +28,13 @@ namespace Ahorcado
         public Operaciones()
         {
             //5 intentos fallidos para adivinar la palabra
-            intentosRestantes = 5;
+            intentosRestantes = 0;
+            pistasRestantes = 0;
             palabraAEncontrar = "";
+            quedanPistas = true;
+            seguirJugando = true;
         }
-
+        #region Public method Region
         /// <summary>
         /// Método que reinicia la partida y inicializa todo los atributos a su estado inicial.
         /// </summary>
@@ -37,6 +42,7 @@ namespace Ahorcado
         {
             //Escoger una nueva palabra del array
             palabraAEncontrar = EscogerPalabra();
+            palabraAEncontrar = palabraAEncontrar.ToUpper();
             hiddenWord = new char[palabraAEncontrar.Length];
             RemplazarPorBarrasBajas(ref hiddenWord);
 
@@ -49,13 +55,18 @@ namespace Ahorcado
             //Reiniciamos contador de pistas 
             pistasRestantes = 5;
 
+            //Reiniciar booleanos
+            seguirJugando = true;
+            quedanPistas = true;
+
         }
 
-
+        /// <summary>
+        /// Método que comprueba si la letra está en la palabra a encontrar y si está, añade la palabra
+        /// </summary>
+        /// <param name="letra"></param>
         public void AñadirLetra(char letra)
         {
-
-            int intentos=5;
 
             if (palabraAEncontrar.Contains(letra))
             {
@@ -69,22 +80,34 @@ namespace Ahorcado
             }
             else
             {
-                intentos--;
+                intentosRestantes--;
 
-                if (intentos == 0)
+                if (intentosRestantes == 0)
                 {
-                    //Finalizar Programa
+                    seguirJugando = false;
                 }
             }
         }
 
+        /// <summary>
+        /// Método para usar pistas
+        /// </summary>
         public void UsarPista()
         {
-            //Añadimos letra random al hiddenArray 
-            AñadirLetraRandomHiddenArray();
-            //restamos 1 al contador de pistas
-            pistasRestantes--;
 
+            if(pistasRestantes > 0)
+            {
+                //Añadimos letra random al hiddenArray 
+                AñadirLetraRandomHiddenArray();
+                //restamos 1 al contador de pistas
+                pistasRestantes--;
+                
+            }
+
+            if (pistasRestantes == 0)
+            {
+                quedanPistas = false;
+            }
         }
 
         /// <summary>
@@ -101,7 +124,77 @@ namespace Ahorcado
 
         }
 
+        #endregion
 
+        #region Getter and Setter region
+
+        /// <summary>
+        /// Método que devuelve el número de intentos restantes
+        /// </summary>
+        /// <returns></returns>
+        public int getIntentos()
+        {
+            return intentosRestantes;
+        }
+
+        /// <summary>
+        /// Método que devuelve el número de pistas restantes
+        /// </summary>
+        /// <returns></returns>
+        public int getPistas()
+        {
+            return pistasRestantes;
+        }
+
+        /// <summary>
+        /// Método que devuelve si quedan pistas por utilizar
+        /// </summary>
+        /// <returns></returns>
+        public bool getQuedanPistas()
+        {
+            return quedanPistas;
+        }
+
+
+        /// <summary>
+        /// Getter seguirJugando boolean.
+        /// </summary>
+        /// <returns></returns>
+        public bool getSeguirJugando()
+        {
+            return seguirJugando;
+        }
+
+        /// <summary>
+        /// Getter hiddenword convert to string
+        /// </summary>
+        /// <returns></returns>
+        public string getHiddenWord()
+        {
+            string result = new string(hiddenWord);
+            IntercalarEspacios(ref result); 
+            return result;
+        }
+
+        #endregion
+
+        #region Private method region
+        /// <summary>
+        /// Check if win
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckIfwin()
+        {
+            bool result = false;
+            string tmpString = new string(hiddenWord);
+            if (palabraAEncontrar == tmpString)
+            {
+                result = true;
+                seguirJugando = false;
+                
+            }
+            return result;
+        }
 
         /// <summary>
         /// Método que escoge una palabra rándom para ser descubierta 
@@ -135,22 +228,20 @@ namespace Ahorcado
         /// </summary>
         private void AñadirLetraRandomHiddenArray()
         {
-            int max = 0;
-            int min = 0;
-            int posicionRandom = 0;
-
-            //Primero generaremos un número random entre la length de la palabra a encontrar
-            Random random = new Random();
-            max = palabraAEncontrar.Length - 1;
-
-            posicionRandom = random.Next(min, max);
+            bool notFinished = true;
 
             //Si la letra no está en la hiddenword, la añadimos.
-            if(hiddenWord[posicionRandom] == '_')
-            {
-                AñadirLetra(Convert.ToChar(palabraAEncontrar.Substring(posicionRandom)));               
+            int i = 0;
+            while (notFinished && i < hiddenWord.Length)
+            {         
+                if (hiddenWord[i] == '_')
+                {
+                    AñadirLetra(Convert.ToChar(palabraAEncontrar[i]));
+                    notFinished = false;
+                      
+                }
+                i++;
             }
-
         }
 
         /// <summary>
@@ -171,7 +262,7 @@ namespace Ahorcado
         }
 
     }
-
+    #endregion
 }
 
-   
+
