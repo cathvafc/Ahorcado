@@ -51,19 +51,28 @@ namespace Ahorcado
 
         }
 
+
         public void AñadirLetra(char letra)
         {
-            //Comprobamos si la letra está en el hiddenArray TODO
 
-            //Si está en el array, añadimos la letra en las posiciones pertinentes y modificamos el textbox.text TODO
+                int j = 0;
 
+                bool seguirjugando = true;
 
-            // Si no está en el array TODO
-                //Restamos un intento
-                //Modificamos imagen
-                //Comprobamos que intentos > 0
-                    //Si intentos = 0, acabamos el programa
-                    // Añadimos imagen de destrucción y muerte
+                if (intentosRestantes >= 0)
+                {
+                seguirjugando = false;
+                }
+                else { 
+                for (int i = 0; seguirjugando = true; i++)
+                {
+
+                    letra = hiddenWord[i];
+                    Console.WriteLine(letra);
+
+                }
+
+            }
         }
 
         /// <summary>
@@ -121,6 +130,7 @@ namespace Ahorcado
             }
         }
 
+
         /// <summary>
         /// Método para añadir una letra random en la hiddenword de la palabra a encontrar 
         /// </summary>
@@ -136,8 +146,7 @@ namespace Ahorcado
         private void IntercalarEspacios(ref string palabra)
         {
             //TODO
-        }
-
+ 
     }
 
 }

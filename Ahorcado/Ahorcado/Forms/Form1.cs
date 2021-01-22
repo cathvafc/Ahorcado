@@ -19,5 +19,23 @@ namespace Ahorcado
             ejemplo1 = new Operaciones();
         }
 
+        private void bt_click(object sender, EventArgs e) //Cuando se pulsa la letra de un boton, obtiene la misma en formato 
+        {
+            Button button = (Button)sender;
+            char letra = Convert.ToChar(button.Text);
+            // Console.WriteLine(letra);
+            Operaciones op = new Operaciones();
+            op.AñadirLetra(letra);
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
