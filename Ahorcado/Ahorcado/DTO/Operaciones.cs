@@ -17,13 +17,17 @@ namespace Ahorcado
 
         string palabraAEncontrar;
         char[] hiddenWord;
+        int intentosRestantes;
+        int pistasRestantes;
 
         /// <summary>
         /// Constructor
         /// </summary>
         public Operaciones()
         {
-
+            //5 intentos fallidos para adivinar la palabra
+            intentosRestantes = 5;
+            palabraAEncontrar = "";
         }
 
         /// <summary>
@@ -35,12 +39,15 @@ namespace Ahorcado
             palabraAEncontrar = EscogerPalabra();
             hiddenWord = new char[palabraAEncontrar.Length];
             RemplazarPorBarrasBajas(ref hiddenWord);
+
             //Ponemos imagen vacia TODO
 
-            //Reiniciamos contadores de intentos TODO
 
-            //Reiniciamos contador de pistas TODO
+            //Reiniciamos contadores de intentos
+            intentosRestantes = 5;
 
+            //Reiniciamos contador de pistas 
+            pistasRestantes = 5;
 
         }
 
