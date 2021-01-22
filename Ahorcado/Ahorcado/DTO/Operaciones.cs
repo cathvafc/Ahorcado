@@ -53,7 +53,9 @@ namespace Ahorcado
 
         public void AñadirLetra(char letra)
         {
-            //Comprobamos si la letra está en el hiddenArray TODO
+            //Comprobamos si la letra está en el palabraAEncontrar TODO
+
+
 
             //Si está en el array, añadimos la letra en las posiciones pertinentes y modificamos el textbox.text TODO
 
@@ -135,7 +137,15 @@ namespace Ahorcado
         /// <param name="palabra"></param>
         private void IntercalarEspacios(ref string palabra)
         {
-            //TODO
+
+            int palabraLength = palabra.Length*2;
+
+            for(int i = 1; i < palabraLength; i++)
+            {                
+                palabra = palabra.Insert(i," ");
+                i++;
+
+            }
         }
 
     }
