@@ -81,7 +81,7 @@ namespace Ahorcado
             else
             {
                 intentosRestantes--;
-
+                //Añadimos la imagen siguiente  de intentosrestantes--; TODO
                 if (intentosRestantes == 0)
                 {
                     seguirJugando = false;
@@ -204,9 +204,9 @@ namespace Ahorcado
         {
             Random random = new Random();
 
-            int t = palabras.Length;
-            string n = palabras[random.Next(t)];
-            return n;
+            int length = palabras.Length;
+            string randomWord = palabras[random.Next(length)];
+            return randomWord;
         }
 
         /// <summary>
