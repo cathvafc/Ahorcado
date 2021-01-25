@@ -66,9 +66,11 @@ namespace Ahorcado
             this.button26 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -96,7 +98,7 @@ namespace Ahorcado
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 191);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 13);
+            this.label1.Size = new System.Drawing.Size(165, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "El número de pistas restantes es: ";
             // 
@@ -453,11 +455,21 @@ namespace Ahorcado
             this.textBox1.Size = new System.Drawing.Size(247, 20);
             this.textBox1.TabIndex = 35;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Ahorcado.Properties.Resources.ah_0;
+            this.pictureBox1.Location = new System.Drawing.Point(273, -19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(337, 492);
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 480);
+            this.ClientSize = new System.Drawing.Size(620, 514);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -470,6 +482,7 @@ namespace Ahorcado
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,6 +527,7 @@ namespace Ahorcado
         private System.Windows.Forms.Button bt_t;
         private System.Windows.Forms.Button bt_z;
         private System.Windows.Forms.Button bt_y;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -29,9 +29,7 @@ namespace Ahorcado
         private void bt_click(object sender, EventArgs e) //Cuando se pulsa la letra de un boton, obtiene la misma en formato 
         {
             Button button = (Button)sender;
-            char letra = Convert.ToChar(button.Text);
-           // Console.WriteLine(letra);
-          
+            char letra = Convert.ToChar(button.Text);        
 
             ejemplo1.AñadirLetra(letra);
             textBox1.Text = ejemplo1.getHiddenWord();
@@ -41,14 +39,40 @@ namespace Ahorcado
 
             if (ejemplo1.CheckIfwin())
             {
+                pictureBox1.Image = Image.FromFile(Application.StartupPath + "/ah_ganador.png");
                 MessageBox.Show("Has ganado felicidades");
             }
 
-            if(!ejemplo1.getSeguirJugando() && !ejemplo1.CheckIfwin())
+            switch (ejemplo1.getIntentos())
             {
-                MessageBox.Show("Has perdido, felicidades tonto");
-                
+                case 5:
+                    pictureBox1.Image = Image.FromFile(Application.StartupPath + "/ah 0.png");
+                    break;
+                case 4:
+                    pictureBox1.Image = Image.FromFile(Application.StartupPath + "/ah 1.png");
+                    break;
+                case 3:
+                    pictureBox1.Image = Image.FromFile(Application.StartupPath + "/ah 2.png");
+                    break;
+                case 2:
+                    pictureBox1.Image = Image.FromFile(Application.StartupPath + "/ah 3.png");
+                    break;
+                case 1:
+                    pictureBox1.Image = Image.FromFile(Application.StartupPath + "/ah 4.png");
+                    break;
+                case 0:
+                    pictureBox1.Image = Image.FromFile(Application.StartupPath + "/ah 5.png");
+                    break;
+                default:
+                    break;
             }
+
+            if (!ejemplo1.getSeguirJugando() && !ejemplo1.CheckIfwin())
+            {
+                MessageBox.Show("Has perdido, felicidades truán");
+
+            }
+
         }
 
         private void Resolver_Click(object sender, EventArgs e)
@@ -75,7 +99,7 @@ namespace Ahorcado
 
             if (ejemplo1.CheckIfwin())
             {
-                MessageBox.Show("Has ganado felicidades");
+                MessageBox.Show("Has ganado, felicidades");
             }
 
         }
