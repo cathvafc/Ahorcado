@@ -1,7 +1,7 @@
 ﻿
 namespace Ahorcado
 {
-    partial class Form1
+    partial class PantallaPrincipal
     {
         /// <summary>
         /// Required designer variable.

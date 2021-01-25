@@ -46,9 +46,6 @@ namespace Ahorcado
             hiddenWord = new char[palabraAEncontrar.Length];
             RemplazarPorBarrasBajas(ref hiddenWord);
 
-            //Ponemos imagen vacia TODO
-
-
             //Reiniciamos contadores de intentos
             intentosRestantes = 5;
 
@@ -81,7 +78,7 @@ namespace Ahorcado
             else
             {
                 intentosRestantes--;
-                //Añadimos la imagen siguiente  de intentosrestantes--; TODO
+
                 if (intentosRestantes == 0)
                 {
                     seguirJugando = false;
